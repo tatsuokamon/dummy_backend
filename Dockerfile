@@ -5,7 +5,7 @@ COPY go.mod ./
 RUN go mod tidy
 COPY . .
 
-RUN CGO_ENABLED=1 GOOS=linux go build -o app main.go
+RUN CGO_ENABLED=1 GOOS=linux go build -o app .
 
 FROM gcr.io/distroless/cc-debian12
 WORKDIR /app
